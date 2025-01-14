@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * La clase SumaVocalesPadre se encarga de iniciar procesos hijo para contar las vocales en un archivo de entrada.
@@ -31,10 +30,8 @@ public class SumaVocalesPadre {
      * @throws IOException Si ocurre un error de E/S.
      */
     public void iniciarProcesosHijo() throws IOException {
-        String line;
         String inputFile = "entrada.txt";
 
-        try (Scanner sc = new Scanner(System.in)) {
             for (int i = 0; i < numChildProcesses; i++) {
                 String vocal = vocals[i];
                 String outputFile = outputFiles[i];
@@ -47,12 +44,9 @@ public class SumaVocalesPadre {
                     ps.println(inputFile);
                     ps.println(vocal);
                     ps.println(outputFile);
-                    //recibir información del hijo, no se usa
-//                    line = br.readLine();
-//                    System.out.println(line);
                 }
             }
-        }
+
         //esperar a que todos los procesos hijo terminen
         for (Process process : processes) {
             try {
