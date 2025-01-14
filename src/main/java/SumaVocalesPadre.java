@@ -7,6 +7,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * La clase `SumaVocalesPadre` se encarga de iniciar procesos hijo para contar las vocales en un archivo de entrada.
+ * <p>
+ * La clase lanza cinco procesos hijo, cada uno contando una vocal específica (a, e, i, o, u) en el archivo de entrada.
+ * Luego, los resultados se escriben en archivos de salida separados.
+ * </p>
+ * <p>
+ * Autor: Chema y Rodrigo
+ * Fecha: 14 enero, 2025
+ * </p>
+ *
  * @author Chema y Rodrigo
  * @date 14 enero, 2025
  */
@@ -16,6 +26,15 @@ public class SumaVocalesPadre {
     String[] vocales = {"a", "e", "i", "o", "u"};
 
 
+    /**
+     * Inicia los procesos hijo para contar las vocales en el archivo de entrada.
+     * <p>
+     * Este método lanza cinco procesos hijo, cada uno contando una vocal específica en el archivo de entrada.
+     * Los resultados se escriben en archivos de salida separados.
+     * </p>
+     *
+     * @throws IOException Si ocurre un error de E/S.
+     */
     public void iniciarProcesosHijo() throws IOException {
         String line;
         String entrada = "entrada.txt";
