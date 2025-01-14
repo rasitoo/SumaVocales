@@ -33,6 +33,7 @@ public class SumaVocalHijo {
         String outputFile;
         int count = 0;
 
+        //Para recibir los datos del proceso padre usé la consola, de esta forma el padre escribe en la consola y el hijo la lee, es la única forma que he encontrado.
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
             inputFile = ".\\" + br.readLine();
@@ -41,11 +42,13 @@ public class SumaVocalHijo {
         }
 
 
+        //Este reader lee el texto de entrada hasta que termine mediante un while.
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                //Separa las tildes con el normalizer
+                //Separa las tildes con el normalizer, sacado de https://es.stackoverflow.com/questions/31178/c%C3%B3mo-limpiar-string-de-tildes-en-java
                 line = Normalizer.normalize(line, Normalizer.Form.NFD);
+                //lee carácter por carácter y si coincide con la vocal que recibimos del proceso padre por consola suma 1
                 for (char c : line.toCharArray()) {
                     if (Character.toLowerCase(c) == Character.toLowerCase(vocal)) {
                         count++;
@@ -53,8 +56,10 @@ public class SumaVocalHijo {
                 }
             }
         }
+        //Se crea el archivo donde se pondrá el número de vocales
         File f = new File(outputFile);
         f.createNewFile();
+        //Se escribe el número de vocales
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             writer.write(String.valueOf(count));
         }
