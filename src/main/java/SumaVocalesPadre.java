@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * La clase SumaVocalesPadre` se encarga de iniciar procesos hijo para contar las vocales en un archivo de entrada.
+ * La clase SumaVocalesPadre se encarga de iniciar procesos hijo para contar las vocales en un archivo de entrada.
  * <p>
  * La clase lanza cinco procesos hijo, cada uno contando una vocal específica (a, e, i, o, u) en el archivo de entrada.
  * Luego, los resultados se escriben en archivos de salida separados.

@@ -18,7 +18,7 @@ import java.text.Normalizer;
 public class SumaVocalHijo {
 
     /**
-     * El método main de la clase `SumaVocalHijo`.
+     * El método main de la clase SumaVocalHijo.
      * <p>
      * Este método lee la ruta del archivo de entrada, la vocal a contar y la ruta del archivo de salida desde la entrada estándar.
      * Luego cuenta las ocurrencias de la vocal especificada (sin importar tilde, mayúscula o minúscula) en el archivo de entrada y escribe el conteo en el archivo de salida.
