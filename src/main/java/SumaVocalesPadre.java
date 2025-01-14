@@ -18,7 +18,7 @@ public class SumaVocalesPadre {
 
     public void iniciarProcesosHijo() throws IOException {
         String line;
-        String entrada = "Lectura.txt";
+        String entrada = "entrada.txt";
 
         try (Scanner sc = new Scanner(System.in)) {
             for (int i = 0; i < numProcesosHijo; i++) {

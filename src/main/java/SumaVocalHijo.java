@@ -12,25 +12,27 @@ public class SumaVocalHijo {
         String outputFile;
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
-            inputFile = br.readLine();
+            inputFile = ".\\" + br.readLine();
             vocal = br.readLine().charAt(0);
             outputFile = br.readLine();
         }
 
         int contar = 0;
+
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 for (char c : line.toCharArray()) {
                     if (Character.toLowerCase(c) == Character.toLowerCase(vocal)) {
                         contar++;
+
                     }
                 }
             }
         }
         File f = new File(outputFile);
         f.createNewFile();
-        System.out.println("asdasdsassad");
+        System.out.println("Hay " + contar + " " + vocal);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
 
             writer.write(String.valueOf(contar));
